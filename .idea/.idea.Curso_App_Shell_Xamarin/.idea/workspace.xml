@@ -29,16 +29,16 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/ViewModels/ProductsViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin.Android/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/Views/ProductsPage.xaml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/Views/PeliculasPage.xaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/Data/SQLiteHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/Models/ProductInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/App.xaml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/Views/ProductsPage.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/Views/ProductsPage.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/ViewModels/PeliculasViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/ViewModels/ProductsViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/App.xaml.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/ViewModels/BaseViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/Views/ProductsPage.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/Data/SQLiteHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin/Views/PeliculasPage.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Curso_App_Shell_Xamarin.Android/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -58,6 +58,7 @@
       <option value="$PROJECT_DIR$/Curso_App_Shell_Xamarin/Views/ProductsPage.xaml" />
       <option value="$PROJECT_DIR$/Curso_App_Shell_Xamarin/Services/ProductService.cs" />
       <option value="$PROJECT_DIR$/Curso_App_Shell_Xamarin/ViewModels/ProductsViewModel.cs" />
+      <option value="$PROJECT_DIR$/Curso_App_Shell_Xamarin.Android/Properties/AssemblyInfo.cs" />
     </changedPaths>
   </component>
   <component name="InvalidFacetManager">
@@ -110,6 +111,7 @@
       <workItem from="1643918088554" duration="1000" />
       <workItem from="1643923416992" duration="1502000" />
       <workItem from="1643926518575" duration="413000" />
+      <workItem from="1643928550619" duration="812000" />
     </task>
     <servers />
   </component>
