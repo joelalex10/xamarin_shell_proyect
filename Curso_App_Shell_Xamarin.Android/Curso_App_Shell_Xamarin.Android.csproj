@@ -83,7 +83,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\carro.jfif" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Curso_App_Shell_Xamarin\Curso_App_Shell_Xamarin.csproj">
       <Project>{305B9555-BF49-4FB7-87CC-707A6D9A9E02}</Project>
