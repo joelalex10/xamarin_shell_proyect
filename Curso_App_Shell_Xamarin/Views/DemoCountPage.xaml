@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:fonts ="clr-namespace:Curso_App_Shell_Xamarin.Fonts"
+             x:Class="Curso_App_Shell_Xamarin.Views.DemoCountPage"
+             Title="Demo Count">
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout HorizontalOptions="Center"
+                         VerticalOptions="CenterAndExpand">
+                <Label Text="Presiona el contador para incrementar"/>
+                <Label Text="{Binding NumberIncrement}" HorizontalOptions="Center" 
+                   FontSize="Large"
+                   FontAttributes="Bold"></Label>
+            </StackLayout>
+            <StackLayout HorizontalOptions="End"
+                         VerticalOptions="End">
+                <!--<ImageButton Source="plus.png"
+                         WidthRequest="40"
+                         HorizontalOptions="End"
+                         VerticalOptions="End"
+                         Margin="0,0,20,20"
+                         x:Name="BtnItem"
+                         Command = "{Binding IncrementCommand}"
+                         Clicked="BtnItem_Clicked"
+                         xct:TouchEffect.PressedOpacity="0.5"
+                         BackgroundColor="Transparent"/>-->
+                <Frame BackgroundColor="red"
+                       Margin="0,0,20,20"
+                       HeightRequest="25"
+                       WidthRequest="25"
+                       xct:TouchEffect.PressedOpacity="0.5"
+                       CornerRadius="50">
+                    <StackLayout>
+                        <Label 
+                        FontFamily="fontello"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"
+                           TextColor="White"
+                           FontSize="25"
+                           Text="{x:Static fonts:IconFont.Add}">
+                        </Label>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding IncrementCommand}">
+                        </TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

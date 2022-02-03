@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Curso_App_Shell_Xamarin.Views.SumarPage">
+    <ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Entry Keyboard="Numeric" Placeholder="Ingrese valor 1" x:Name="EntryValor1" Text="{Binding Valor1}"></Entry>
+            <Entry Keyboard="Numeric" Placeholder="Ingrese valor 2" x:Name="EntryValor2" Text="{Binding Valor2}"></Entry>
+            <Button Text="SUMAR" Command="{Binding SumarCommand}"></Button>
+            <Label Text="{Binding Resultado}"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

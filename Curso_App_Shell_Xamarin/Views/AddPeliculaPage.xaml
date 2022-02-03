@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Curso_App_Shell_Xamarin.Views.AddPeliculaPage"
+             xmlns:fonts ="clr-namespace:Curso_App_Shell_Xamarin.Fonts"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Title="{Binding Title, StringFormat='{0:F0} Pelicula'}">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <StackLayout Margin="30,20,30,0">
+                <Label Text="Pelicula" Padding="5,0,0,0" 
+                       FontSize="15" 
+                       FontAttributes="Bold"
+                       >
+                </Label>
+                <StackLayout Padding="0,0,30,0">
+                    <Frame BackgroundColor="Transparent" BorderColor="DarkKhaki" 
+                                   Padding="0" Margin="0,5,0,0"
+                           CornerRadius="10">
+                        <StackLayout Orientation="Horizontal" Margin="10,0,0,0">
+                            <!--<autocomplete:SfAutoComplete Text="{Binding PeliculaEntry}" ShowBorder="False" 
+                                                         Watermark="Ingrese el nombre de la pelicula" 
+                                                         TextColor="SlateGray"
+                                                         HorizontalOptions="FillAndExpand"
+                                                         Margin="0,0,15,0">
+                                
+                            </autocomplete:SfAutoComplete>-->
+
+                            <Entry Text="{Binding PeliculaEntry}" 
+                                   Placeholder="Ingrese el nombre de la pelicula" 
+                                   TextColor="SlateGray"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="0,0,15,0">
+                                <Entry.Effects>
+                                    <xct:RemoveBorderEffect />
+                                </Entry.Effects>
+
+                            </Entry>
+
+                            <!--<customRender:MyCustomEntry Text="{Binding PeliculaEntry}" Placeholder="Ingrese el nombre de la pelicula" TextColor="SlateGray"
+                                                         HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>-->
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Margin="30,10,30,0">
+                <Label Text="Director" Padding="5,0,0,0" 
+                       FontSize="15"
+                       FontAttributes="Bold"></Label>
+                <StackLayout Padding="0,0,30,0">
+                    <Frame BackgroundColor="Transparent" BorderColor="DarkKhaki" 
+                           Padding="0" Margin="0,5,0,0"
+                           CornerRadius="10">
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="10,0,0,0">
+                            <Entry Text="{Binding DirectorEntry}"
+                                   Placeholder="Ingrese el nombre del director"
+                                   TextColor="SlateGray"
+                                   HorizontalOptions="FillAndExpand"
+                                   Margin="0,0,15,0"
+                                   xct:IconTintColorEffect.TintColor="Red">
+                                <Entry.Effects>
+                                    <xct:RemoveBorderEffect />
+                                </Entry.Effects>
+                            </Entry>
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Margin="30,10,30,0">
+                <Label Text="Categoria (Seleccione uno)" Padding="5,0,0,0" 
+                       FontSize="15"
+                       FontAttributes="Bold"></Label>
+                <StackLayout Padding="0,0,30,0">
+                    <Frame BackgroundColor="Transparent" BorderColor="DarkKhaki" 
+                                   Padding="0" Margin="0,5,0,0" CornerRadius="10" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Picker Grid.Row="0" Grid.Column="0" Title="--Seleccione uno--"
+                                                        ItemsSource="{Binding CategoriasList}"
+                                                        ItemDisplayBinding="{Binding Nombre}"
+                                                        SelectedItem="{Binding SelectedCategoria}"
+                                                        HorizontalTextAlignment="Start"
+                                                        TextColor="SlateGray"
+                                                        Margin="20,0,0,0">
+                                <Picker.Effects>
+                                    <xct:RemoveBorderEffect />
+                                </Picker.Effects>
+                            </Picker>
+                            <Label HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   FontFamily="fontello"
+                                   Grid.Row="0"
+                                   TextColor="DarkKhaki"
+                                   FontSize="25"
+                                   Grid.Column="1"
+                                   Text="{x:Static fonts:IconFont.Arrow_drop_down}">
+                            </Label>
+                            <!--<Image Grid.Row="0" Grid.Column="1" Source="arrowdown.png" HorizontalOptions="Center" HeightRequest="15"></Image>-->
+                        </Grid>
+
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Margin="0,30,0,0">
+                <Button Text="{Binding Title}" HorizontalOptions="CenterAndExpand" Command="{Binding AgregarCommand}"></Button>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

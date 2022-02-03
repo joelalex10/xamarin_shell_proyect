@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Curso_App_Shell_Xamarin.ViewModels"
+             x:Class="Curso_App_Shell_Xamarin.Views.ProductsPage"
+             Title="PRODUCTOS">
+    <!-- <ContentPage.BindingContext> -->
+    <!--     <viewmodels:ProductsViewModel></viewmodels:ProductsViewModel> -->
+    <!-- </ContentPage.BindingContext> -->
+    <ContentPage.Content>
+        <StackLayout>
+            <RefreshView
+                Command="{Binding LoadProductsCommand}"
+                IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                <CollectionView SelectionMode="Single"
+                                ItemsSource="{Binding ListProductInfos}">
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

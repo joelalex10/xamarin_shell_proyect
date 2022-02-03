@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Curso_App_Shell_Xamarin.Views.PrincipalPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Title="Pagina Principal">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout>
+
+
+                <!--"#2196F3"-->
+                <Frame BackgroundColor="Gray" Padding="24" CornerRadius="0">
+                    <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                </Frame>
+                <Label Text="Start developing now" 
+                   FontSize="Title" 
+                   Padding="30,10,30,10"/>
+                <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
+                <!--<xct:BadgeView
+                BackgroundColor="Red"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                TextColor="White"
+                Text="44">
+                </xct:BadgeView>
+                <Entry VerticalOptions="Center" Margin="32, 0,0,0"
+                   Placeholder="placeholder">
+                    <Entry.Effects>
+                        <xct:RemoveBorderEffect />
+                    </Entry.Effects>
+                </Entry>
+                <Button VerticalOptions="Center"
+                    Text="tap"
+                    xct:VisualFeedbackEffect.FeedbackColor="Transparent">
+                    <Button.Effects>
+                        <xct:VisualFeedbackEffect />
+                    </Button.Effects>
+                </Button>
+                <xct:RangeSlider
+                MaximumValue="10"
+                MinimumValue="-10"
+                StepValue="1"
+                LowerValue="-10"
+                UpperValue="10">
+                </xct:RangeSlider>
+                
+                <Label Text="value"
+                   xct:SafeAreaEffect.SafeArea="True"/>
+                <xct:Expander >
+                    <xct:Expander.Header>
+                        <Label Text="Header" />
+                    </xct:Expander.Header>
+                    <Label Text="Content" />
+                </xct:Expander>
+                <xct:MediaElement Source="https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4" />
+                <xct:AvatarView VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Text="XF"
+                    Size="64"
+                    Color="Green"
+                    TextColor="White" />
+                <Label FontSize="16" Padding="30,24,30,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Learn more at "/>
+                                <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label VerticalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="tap"
+                       xct:TouchEffect.PressedScale="0.7" />
+                <Button VerticalOptions="Center"
+           Text="tap"
+           xct:VisualFeedbackEffect.FeedbackColor="Red">
+                    <Button.Effects>
+                        <xct:VisualFeedbackEffect />
+                    </Button.Effects>
+                </Button>
+                <Entry VerticalOptions="Center" Margin="32, 0"
+                       Text="hoge fuga">
+                    <Entry.Effects>
+                        <xct:SelectAllTextEffect />
+                    </Entry.Effects>
+                </Entry>-->
+                
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Curso_App_Shell_Xamarin.ViewModels"
+             xmlns:fonts ="clr-namespace:Curso_App_Shell_Xamarin.Fonts"
+             x:Class="Curso_App_Shell_Xamarin.Views.PeliculasPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Title="Peliculas">
+    <!-- <ContentPage.BindingContext> -->
+    <!--     <viewmodels:PeliculasViewModel></viewmodels:PeliculasViewModel> -->
+    <!-- </ContentPage.BindingContext>          -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Order="Primary"
+            Command="{Binding AgregarCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="fontello"
+                    Size="45"
+                    Glyph="{x:Static fonts:IconFont.Add_circle}"
+                    Color="DarkBlue">
+                </FontImageSource>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <StackLayout>
+            <!--<Frame Padding="0"
+                   Margin="10,5,10,0" 
+                   HeightRequest="60"
+                   CornerRadius="5"
+                   BackgroundColor="#515151"
+                   HasShadow="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Grid.Row="0" Grid.Column="0"
+                           FontFamily="fontello"
+                           Margin="10,00,0,0"
+                           TextColor="White" FontSize="25"
+                           Text="{x:Static fonts:IconFont.Search}">
+                    </Label>
+
+                    <Entry Grid.Row="0" Grid.Column="1" 
+                           Placeholder="Ingrese un nombre"
+                           PlaceholderColor="#C9C9C9"
+                           HorizontalTextAlignment="Start"
+                           TextColor="White"
+                           Text="{Binding Search}"
+                           Margin="0,0,0,0"
+                           >
+                        <Entry.Effects>
+                            <xct:RemoveBorderEffect />
+                        </Entry.Effects>
+                        <Entry.Behaviors>
+                            <xct:EventToCommandBehavior
+                                EventName="TextChanged"
+                                Command="{Binding EntryTextChanged}">
+                            </xct:EventToCommandBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Label HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Grid.Row="0" Grid.Column="2"
+                           FontFamily="fontello"
+                           Margin="10,0,7,0"
+                           TextColor="White" FontSize="25"
+                           IsVisible="{Binding IsVisible}"
+                           xct:TouchEffect.PressedOpacity="0.5"
+                           Text="{x:Static fonts:IconFont.Clear}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding LabelClearSearch}">
+                            </TapGestureRecognizer>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    --><!--<Image Grid.Row="0" Grid.Column="1" Source="arrowdown.png" HorizontalOptions="Center" HeightRequest="15"></Image>--><!--
+                </Grid>
+            </Frame>-->
+
+            <RefreshView Command="{Binding LoadPeliculasCommand}"
+                     IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+                     >
+                <CollectionView SelectionMode="Single"
+                            ItemsSource="{Binding ListPeliculas}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+                                        <SwipeItems>
+                                            <SwipeItem 
+                                                BackgroundColor="Red"
+                                                Text="ELIMINAR"
+                                                CommandParameter="{Binding .}"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:PeliculasViewModel}}, Path=DeleteCommand}"
+                                                >
+                                                <SwipeItem.IconImageSource>
+                                                    <FontImageSource
+                                                        FontFamily="fontello"
+                                                        Size="45"
+                                                        Glyph="{x:Static fonts:IconFont.Delete}"
+                                                        Color="DarkBlue">
+                                                    </FontImageSource>
+                                                </SwipeItem.IconImageSource>
+                                            </SwipeItem>
+                                            <SwipeItem 
+                                                BackgroundColor="DarkGreen"
+                                                Text="ACTUALIZAR"
+                                                CommandParameter="{Binding .}"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:PeliculasViewModel}}, Path=UpdateCommand}"
+                                                >
+                                                <SwipeItem.IconImageSource>
+                                                    <FontImageSource
+                                                        FontFamily="fontello"
+                                                        Size="45"
+                                                        Glyph="{x:Static fonts:IconFont.Mode_edit}">
+                                                    </FontImageSource>
+                                                </SwipeItem.IconImageSource>
+                                            </SwipeItem>
+                                        </SwipeItems>
+                                    </SwipeView.RightItems>
+                                    <Grid>
+                                        <StackLayout>
+                                            <Frame Margin="20,5,20,5"
+                                                    CornerRadius="5"
+                                                    HasShadow="True"   
+                                                    HeightRequest="70"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="CenterAndExpand">
+                                                <StackLayout>
+                                                    <Label 
+                                                        HorizontalTextAlignment="Center">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <FormattedString.Spans>
+                                                                    <!--<Span FontFamily="fontello"
+                                                                          Text="{x:Static fonts:IconFont.Delete}"></Span>-->
+                                                                    <Span Text="Pelicula: " FontAttributes="Bold"/>
+                                                                    <Span Text="{Binding Nombre}"/>
+                                                                </FormattedString.Spans>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label HorizontalTextAlignment="Center">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <FormattedString.Spans>
+                                                                    <Span Text="Categoria: " FontAttributes="Bold"/>
+                                                                    <Span Text="{Binding Categoria.Nombre}"/>
+                                                                </FormattedString.Spans>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                        
+                                                    </Label>
+                                                    <Label HorizontalTextAlignment="Center">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <FormattedString.Spans>
+                                                                    <Span Text="Director: " FontAttributes="Bold"/>
+                                                                    <Span Text="{Binding Director}"/>
+                                                                </FormattedString.Spans>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
+                                            <!--<BoxView BackgroundColor="Gray" HeightRequest="0.1"></BoxView>-->
+                                        </StackLayout>
+                                    </Grid>
+                                </SwipeView>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
