@@ -4,10 +4,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:Curso_App_Shell_Xamarin.ViewModels"
              x:Class="Curso_App_Shell_Xamarin.Views.ProductsPage"
+             xmlns:fonts ="clr-namespace:Curso_App_Shell_Xamarin.Fonts"
+
              Title="PRODUCTOS">
     <!-- <ContentPage.BindingContext> -->
     <!--     <viewmodels:ProductsViewModel></viewmodels:ProductsViewModel> -->
     <!-- </ContentPage.BindingContext> -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Order="Primary"
+            Command="{Binding AgregarCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="fontello"
+                    Size="45"
+                    Glyph="{x:Static fonts:IconFont.Add_circle}"
+                    Color="DarkBlue">
+                </FontImageSource>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <RefreshView
@@ -19,12 +35,49 @@
                         <DataTemplate>
                             <StackLayout>
                                 <Grid>
-                                    <Frame HasShadow="True" Margin="10,10,10,10">
-                                        <StackLayout>
-                                            <Label Text="{Binding ProductName }"></Label>
-                                            <Label Text="{Binding NombreMarca }"></Label>
-                                        </StackLayout>
-                                    </Frame>
+                                    <Frame Margin="20,5,20,5"
+                                                    CornerRadius="5"
+                                                    HasShadow="True"   
+                                                    HeightRequest="70"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="CenterAndExpand">
+                                                <StackLayout>
+                                                    <Label 
+                                                        HorizontalTextAlignment="Center">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <FormattedString.Spans>
+                                                                    <!--<Span FontFamily="fontello"
+                                                                          Text="{x:Static fonts:IconFont.Delete}"></Span>-->
+                                                                    <Span Text="Nombre Producto: " FontAttributes="Bold"/>
+                                                                    <Span Text="{Binding ProductName}"/>
+                                                                </FormattedString.Spans>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <Label HorizontalTextAlignment="Center">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <FormattedString.Spans>
+                                                                    <Span Text="Descripcion: " FontAttributes="Bold"/>
+                                                                    <Span Text="{Binding Description}"/>
+                                                                </FormattedString.Spans>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                        
+                                                    </Label>
+                                                    <Label HorizontalTextAlignment="Center">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <FormattedString.Spans>
+                                                                    <Span Text="Marca: " FontAttributes="Bold"/>
+                                                                    <Span Text="{Binding NombreMarca}"/>
+                                                                </FormattedString.Spans>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                </StackLayout>
+                                            </Frame>
                                     
                                 </Grid>
                             </StackLayout>

@@ -39,6 +39,7 @@ namespace Curso_App_Shell_Xamarin
 
         public void RegisterRoutes() {
             Routing.RegisterRoute(nameof(AddPeliculaPage), typeof(AddPeliculaPage));
+            Routing.RegisterRoute(nameof(AddProductPage), typeof(AddProductPage));
         }
     }
 }

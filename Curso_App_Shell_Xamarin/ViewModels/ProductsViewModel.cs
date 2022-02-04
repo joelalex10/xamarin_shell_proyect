@@ -11,6 +11,7 @@ namespace Curso_App_Shell_Xamarin.ViewModels
     public class ProductsViewModel:BaseViewModel
     {
         public Command LoadProductsCommand { get; }
+        public Command AgregarCommand { get; set; }
         public ObservableCollection<ProductoRequest> ListProductInfos
         {
             get => listProductInfos;
@@ -26,6 +27,7 @@ namespace Curso_App_Shell_Xamarin.ViewModels
         {
             ListProductInfos = new ObservableCollection<ProductoRequest>();
             LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
+            AgregarCommand = new Command(async () => await ExecuteAgregarCommand());
         }
         public async Task ExecuteLoadProductsCommand()
         {
@@ -52,6 +54,10 @@ namespace Curso_App_Shell_Xamarin.ViewModels
             {
                 IsBusy = false;
             }
+        }
+        private async Task ExecuteAgregarCommand()
+        {
+            await Shell.Current.GoToAsync($"AddProductPage?productoId={0}");
         }
 
         public void OnAppearing()
