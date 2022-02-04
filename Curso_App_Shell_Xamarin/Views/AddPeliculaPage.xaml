@@ -8,7 +8,7 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <StackLayout Margin="30,20,30,0">
+            <StackLayout Margin="20,20,10,0">
                 <Label Text="Pelicula" Padding="5,0,0,0" 
                        FontSize="15" 
                        FontAttributes="Bold"
@@ -45,7 +45,7 @@
                 </StackLayout>
             </StackLayout>
 
-            <StackLayout Margin="30,10,30,0">
+            <StackLayout Margin="20,10,10,0">
                 <Label Text="Director" Padding="5,0,0,0" 
                        FontSize="15"
                        FontAttributes="Bold"></Label>
@@ -71,7 +71,7 @@
                 </StackLayout>
             </StackLayout>
 
-            <StackLayout Margin="30,10,30,0">
+            <StackLayout Margin="20,10,10,0">
                 <Label Text="Categoria (Seleccione uno)" Padding="5,0,0,0" 
                        FontSize="15"
                        FontAttributes="Bold"></Label>
