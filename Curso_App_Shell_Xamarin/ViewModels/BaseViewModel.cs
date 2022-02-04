@@ -23,7 +23,7 @@ namespace Curso_App_Shell_Xamarin.ViewModels
 
         public IPeliculaService PeliculaStore => DependencyService.Get<IPeliculaService>();
         public ICategoriaService CategoriaService => DependencyService.Get<ICategoriaService>();
-        public IProductService ProductStore => DependencyService.Get<IProductService>();
+        public IProductsService ProductoStore => DependencyService.Get<IProductsService>();
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string name = "")
         {

@@ -15,6 +15,21 @@
                 IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
                 <CollectionView SelectionMode="Single"
                                 ItemsSource="{Binding ListProductInfos}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Grid>
+                                    <Frame HasShadow="True" Margin="10,10,10,10">
+                                        <StackLayout>
+                                            <Label Text="{Binding ProductName }"></Label>
+                                            <Label Text="{Binding NombreMarca }"></Label>
+                                        </StackLayout>
+                                    </Frame>
+                                    
+                                </Grid>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
         </StackLayout>

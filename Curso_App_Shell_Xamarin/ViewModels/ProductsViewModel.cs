@@ -2,6 +2,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Curso_App_Shell_Xamarin.DTOs;
 using Curso_App_Shell_Xamarin.Models;
 using Xamarin.Forms;
 
@@ -10,7 +11,7 @@ namespace Curso_App_Shell_Xamarin.ViewModels
     public class ProductsViewModel:BaseViewModel
     {
         public Command LoadProductsCommand { get; }
-        public ObservableCollection<ProductInfo> ListProductInfos
+        public ObservableCollection<ProductoRequest> ListProductInfos
         {
             get => listProductInfos;
             set
@@ -19,11 +20,11 @@ namespace Curso_App_Shell_Xamarin.ViewModels
                 OnPropertyChanged();
             }
         }
-        private ObservableCollection<ProductInfo> listProductInfos;
+        private ObservableCollection<ProductoRequest> listProductInfos;
 
         public ProductsViewModel()
         {
-            ListProductInfos = new ObservableCollection<ProductInfo>();
+            ListProductInfos = new ObservableCollection<ProductoRequest>();
             LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
         }
         public async Task ExecuteLoadProductsCommand()
@@ -34,11 +35,11 @@ namespace Curso_App_Shell_Xamarin.ViewModels
             {
                 ListProductInfos.Clear();
                 Console.WriteLine("ACCEDIENDO A TRY CATCH");
-                var productInfos = await ProductStore.GetProducts();
+                var productInfos = await ProductoStore.GetListProductsDetails();
                 foreach (var item in productInfos)
-                {
+                { 
                     ListProductInfos.Add(item);
-                }
+                 }
             }
             catch (Exception ex)
             {
